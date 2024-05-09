@@ -18,6 +18,10 @@ export const input = style({
   color: vars.color.gray_01,
 });
 
+export const label = style({
+  color: vars.color.white,
+});
+
 export const inputBoxRecipe = recipe({
   base: {
     width: "100%",

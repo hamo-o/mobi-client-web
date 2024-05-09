@@ -16,9 +16,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const Default: Story = {
+  args: {
+    state: "default",
+    label: "방문날짜*",
+    placeholder: "검색어를 입력하세요",
+  },
+};
+
 export const Active: Story = {
   args: {
     state: "active",
+    label: "방문날짜*",
     placeholder: "검색어를 입력하세요",
   },
 };
