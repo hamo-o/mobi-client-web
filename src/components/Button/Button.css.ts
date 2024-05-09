@@ -3,6 +3,7 @@ import { vars } from "@/styles/theme.css";
 
 export const buttonRecipe = recipe({
   base: {
+    height: 52,
     borderRadius: "0.5rem",
   },
   variants: {
