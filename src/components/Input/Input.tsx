@@ -9,14 +9,16 @@ import {
 import { Search } from "@/icons";
 
 export type InputProps = InputVariants & {
-  label: string;
+  label?: string;
   placeholder: string;
 };
 
 export const Input = (props: InputProps) => {
   return (
     <div className={container}>
-      <span className={`${label} ${vars.fonts.label3}`}>{props.label}</span>
+      {props.label && (
+        <span className={`${label} ${vars.fonts.label3}`}>{props.label}</span>
+      )}
       <div className={inputBoxRecipe({ state: props.state })}>
         <Search />
         <input className={input} placeholder={props.placeholder} />
