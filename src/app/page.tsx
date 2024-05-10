@@ -5,7 +5,6 @@ import { container, cardContainer } from "./home.css";
 const Home = () => {
   return (
     <main className={container}>
-      <NavigationTop />
       <div className={cardContainer}>
         {[
           {
