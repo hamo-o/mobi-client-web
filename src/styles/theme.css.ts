@@ -24,7 +24,7 @@ export const [themeClass, vars] = createTheme({
       fontFamily:
         "Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif",
       fontSize: "1.875rem",
-      fontWeight: "700",
+      fontWeight: "500",
       lineHeight: "160%",
       letterSpacing: "-0.4px",
     },
@@ -32,7 +32,7 @@ export const [themeClass, vars] = createTheme({
       fontFamily:
         "Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif",
       fontSize: "1.5rem",
-      fontWeight: "600",
+      fontWeight: "500",
       lineHeight: "160%",
       letterSpacing: "-0.4px",
     },
@@ -40,7 +40,7 @@ export const [themeClass, vars] = createTheme({
       fontFamily:
         "Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif",
       fontSize: "1.25rem",
-      fontWeight: "700",
+      fontWeight: "400",
       lineHeight: "160%",
       letterSpacing: "-0.4px",
     },
