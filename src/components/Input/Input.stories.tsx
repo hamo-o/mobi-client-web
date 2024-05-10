@@ -10,6 +10,13 @@ const meta = {
       appDirectory: true,
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: 400 }}>
+        <Story />
+      </div>
+    ),
+  ],
   tags: ["autodocs"],
 } satisfies Meta<InputProps>;
 
@@ -21,6 +28,7 @@ export const Default: Story = {
     state: "default",
     label: "방문날짜*",
     placeholder: "검색어를 입력하세요",
+    icon: true,
   },
 };
 
@@ -29,5 +37,6 @@ export const Active: Story = {
     state: "active",
     label: "방문날짜*",
     placeholder: "검색어를 입력하세요",
+    icon: true,
   },
 };

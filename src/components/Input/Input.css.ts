@@ -3,7 +3,7 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "@/styles/theme.css";
 
 export const container = style({
-  width: 400,
+  width: "100%",
 
   display: "flex",
   flexDirection: "column",
@@ -18,8 +18,8 @@ export const input = style({
   color: vars.color.gray_01,
 });
 
-export const label = style({
-  color: vars.color.white,
+export const labelContainer = style({
+  color: vars.color.gray_01,
 });
 
 export const inputBoxRecipe = recipe({
