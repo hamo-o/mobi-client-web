@@ -5,6 +5,8 @@ export const buttonRecipe = recipe({
   base: {
     height: 52,
     borderRadius: "0.5rem",
+
+    flexShrink: 0,
   },
   variants: {
     state: {
