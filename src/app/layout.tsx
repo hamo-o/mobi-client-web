@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { themeClass } from "@/styles/theme.css";
+import { NavigationTop } from "@/components";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${themeClass} ${pretendard}`}>{children}</body>
+      <body className={`${themeClass} ${pretendard}`}>
+        <NavigationTop />
+        {children}
+      </body>
     </html>
   );
 }
