@@ -5,4 +5,6 @@ export * from "./Tag";
 export * from "./Bubble";
 
 export * from "./Card";
+export * from "./CardDetail";
 export * from "./NavigationTop";
+export * from "./NavigationLeft";

@@ -12,10 +12,14 @@ export const container = style({
   justifyContent: "space-between",
 
   background: vars.color.black,
+
+  position: "fixed",
+  top: 0,
+  left: 0,
 });
 
 export const form = style({
-  width: "50%",
+  width: "30%",
   display: "flex",
   gap: "1.5rem",
 });

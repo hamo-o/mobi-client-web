@@ -11,6 +11,8 @@ export const tabRecipe = recipe({
     display: "flex",
     justifyContent: "space-between",
     flexShrink: 0,
+
+    cursor: "pointer",
   },
   variants: {
     state: {

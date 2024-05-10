@@ -1,10 +1,12 @@
+"use client";
+
 import { useState } from "react";
 import { Tab } from "./Tab";
 import { container } from "./NavigationLeft.css";
 
-export type NavigationToptProps = {};
+export type NavigationLeftProps = {};
 
-export const NavigationLeft = (props: NavigationToptProps) => {
+export const NavigationLeft = (props: NavigationLeftProps) => {
   const [selected, setSelected] = useState(0);
 
   return (
