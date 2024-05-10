@@ -15,6 +15,7 @@ export const container = style({
 });
 
 export const form = style({
+  width: "50%",
   display: "flex",
   gap: "1.5rem",
 });
