@@ -2,7 +2,7 @@ import { vars } from "@/styles/theme.css";
 import {
   container,
   input,
-  label,
+  labelContainer,
   inputBoxRecipe,
   InputVariants,
 } from "./Input.css";
@@ -10,18 +10,22 @@ import { Search } from "@/icons";
 
 export type InputProps = InputVariants & {
   label?: string;
-  placeholder: string;
+  placeholder?: string;
+  icon: boolean;
 };
 
 export const Input = (props: InputProps) => {
+  const { label, placeholder, icon } = props;
   return (
     <div className={container}>
-      {props.label && (
-        <span className={`${label} ${vars.fonts.label3}`}>{props.label}</span>
+      {label && (
+        <span className={`${labelContainer} ${vars.fonts.label3}`}>
+          {label}
+        </span>
       )}
       <div className={inputBoxRecipe({ state: props.state })}>
-        <Search />
-        <input className={input} placeholder={props.placeholder} />
+        {icon && <Search />}
+        <input className={input} placeholder={placeholder} />
       </div>
     </div>
   );
