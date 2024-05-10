@@ -1,7 +1,7 @@
 import React from "react";
 import localFont from "next/font/local";
 import type { Preview } from "@storybook/react";
-import { themeClass } from "../src/styles/theme.css";
+import { themeClass, vars } from "../src/styles/theme.css";
 
 const preview: Preview = {
   parameters: {
