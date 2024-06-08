@@ -22,7 +22,7 @@ export const Modal = (props: ModalProps) => {
   const { title, text, children, button } = props;
   return (
     <div className={background} onClick={() => router.back()}>
-      <div className={container}>
+      <div className={container} onClick={(e) => e.stopPropagation()}>
         <div className={topContainer}>
           <span className={`${titleContainer} ${typos.title}`}>{title}</span>
           <div className={contentContainer}>{children}</div>
