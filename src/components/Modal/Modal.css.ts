@@ -1,6 +1,21 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "@/styles/theme.css";
 
+export const background = style({
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100vw",
+  height: "100vh",
+
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+
+  background: vars.color.black_20,
+  backdropFilter: "blur(5px)",
+});
+
 export const container = style({
   width: 600,
   padding: "1.5rem",
@@ -29,11 +44,6 @@ export const titleContainer = style({
   textAlign: "center",
 
   color: vars.color.gray_01,
-});
-
-export const inputContainer = style({
-  display: "flex",
-  gap: 20,
 });
 
 export const contentContainer = style({
