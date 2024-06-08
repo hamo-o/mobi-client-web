@@ -1,14 +1,11 @@
 import { Modal } from "@/components/Modal";
 import { Button, Input } from "@/components";
-import { Logo } from "@/icons";
-
-import { style } from "@vanilla-extract/css";
 
 const PlaceVisitModal = () => {
   return (
-    <Modal title={<Logo />} button={<Button state="active" text="완료" />}>
+    <Modal title="방문 예정" button={<Button state="active" text="완료" />}>
       <Input label="방문 장소*" icon={false} />
-      <div className={inputContainer}>
+      <div style={{ display: "flex", gap: 20 }}>
         <Input label="방문 날짜*" icon={false} />
         <Input label="방문 시간*" icon={false} />
       </div>
@@ -16,10 +13,5 @@ const PlaceVisitModal = () => {
     </Modal>
   );
 };
-
-const inputContainer = style({
-  display: "flex",
-  gap: 20,
-});
 
 export default PlaceVisitModal;

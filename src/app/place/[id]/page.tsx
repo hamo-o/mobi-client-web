@@ -7,6 +7,7 @@ import {
   twoColumnContainer,
 } from "../place.css";
 import { Bubble, Button, CardDetail, Figure, Tag } from "@/components";
+import Link from "next/link";
 
 const Place = ({ params }: { params: { id: string } }) => {
   return (
@@ -31,7 +32,9 @@ const Place = ({ params }: { params: { id: string } }) => {
             <Tag text="핫플" />
           </div>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <Button state="active" text="방문하기" />
+            <Link href="/place/create">
+              <Button state="active" text="방문하기" />
+            </Link>
             <Button state="default" text="저장하기" />
           </div>
         </div>
