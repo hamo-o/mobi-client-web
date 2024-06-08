@@ -1,3 +1,5 @@
+"use client";
+
 import { buttonRecipe, ButtonVariants } from "./Button.css";
 import { typos } from "@/styles/typos.css";
 
