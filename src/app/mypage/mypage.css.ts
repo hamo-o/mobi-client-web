@@ -22,4 +22,5 @@ export const cardContainer = style({
   gap: 20,
 
   overflowY: "scroll",
+  scrollbarWidth: "none",
 });
