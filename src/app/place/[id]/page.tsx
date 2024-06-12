@@ -6,7 +6,15 @@ import {
   imageContainer,
   twoColumnContainer,
 } from "../place.css";
-import { Bubble, Button, CardDetail, Figure, Tag, Chart } from "@/components";
+import {
+  Bubble,
+  Button,
+  CardDetail,
+  Figure,
+  Tag,
+  Chart,
+  Map,
+} from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -98,7 +106,7 @@ const Place = ({ params }: { params: { id: string } }) => {
                 background: vars.color.gray_05,
               }}
             >
-              지도
+              <Map />
             </div>
           }
         />
