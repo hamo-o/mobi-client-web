@@ -8,7 +8,9 @@ import {
 
 export const Map = () => {
   return (
-    <NavermapsProvider ncpClientId={process.env.NAVERMAPS_CLIENT_ID || ""}>
+    <NavermapsProvider
+      ncpClientId={process.env.NEXT_PUBLIC_NAVERMAPS_CLIENT_ID || ""}
+    >
       <MapDiv
         style={{
           height: 400,
