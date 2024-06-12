@@ -6,14 +6,22 @@ import {
   imageContainer,
   twoColumnContainer,
 } from "../place.css";
-import { Bubble, Button, CardDetail, Figure, Tag } from "@/components";
+import { Bubble, Button, CardDetail, Figure, Tag, Chart } from "@/components";
 import Link from "next/link";
+import Image from "next/image";
 
 const Place = ({ params }: { params: { id: string } }) => {
   return (
     <main className={container}>
       <div>
-        <div className={imageContainer}></div>
+        <div className={imageContainer}>
+          <Image
+            src="/images/places/홍대.png"
+            alt="홍대"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
         <div
           style={{
             width: "100%",
@@ -59,12 +67,11 @@ const Place = ({ params }: { params: { id: string } }) => {
               <div
                 style={{
                   width: "100%",
-                  height: 200,
                   borderRadius: "0.5rem",
-                  background: vars.color.gray_05,
+                  background: vars.color.gray_06,
                 }}
               >
-                그래프
+                <Chart />
               </div>
               <div
                 style={{ display: "flex", flexDirection: "column", gap: 20 }}

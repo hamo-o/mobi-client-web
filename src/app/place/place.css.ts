@@ -14,8 +14,10 @@ export const imageContainer = style({
   height: 400,
 
   borderRadius: "1rem",
-
   background: vars.color.gray_05,
+
+  position: "relative",
+  overflow: "hidden",
 });
 
 export const cardContainer = style({

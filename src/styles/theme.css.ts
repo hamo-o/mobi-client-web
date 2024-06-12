@@ -1,25 +1,8 @@
 import { createTheme, globalStyle } from "@vanilla-extract/css";
+import { colors } from "./colors";
 
 export const [themeClass, vars] = createTheme({
-  color: {
-    gray_03: "#b3b3b3",
-    gray_01: "#efefef",
-    gray_06: "#313131",
-    white: "#ffffff",
-    green: "#33c37e",
-    green_20: "#33c37e33",
-    red_20: "#e8424c33",
-    red: "#e8424c",
-    orange_20: "#e8884233",
-    orange: "#e88842",
-    yellow: "#e8ba42",
-    yellow_20: "#e8ba4233",
-    black: "#212121",
-    black_20: "#000000BF",
-    gray_04: "#656565",
-    gray_05: "#404040",
-    gray_02: "#d4d4d4",
-  },
+  color: colors,
   fonts: {
     title: {
       fontFamily:

@@ -16,6 +16,8 @@ export const container = style({
   position: "fixed",
   top: 0,
   left: 0,
+
+  zIndex: 1,
 });
 
 export const form = style({
