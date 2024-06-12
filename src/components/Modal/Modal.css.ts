@@ -14,6 +14,8 @@ export const background = style({
 
   background: vars.color.black_20,
   backdropFilter: "blur(5px)",
+
+  zIndex: 2,
 });
 
 export const container = style({
