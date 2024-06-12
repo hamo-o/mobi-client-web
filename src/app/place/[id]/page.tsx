@@ -6,7 +6,7 @@ import {
   imageContainer,
   twoColumnContainer,
 } from "../place.css";
-import { Bubble, Button, CardDetail, Figure, Tag } from "@/components";
+import { Bubble, Button, CardDetail, Figure, Tag, Chart } from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -67,12 +67,11 @@ const Place = ({ params }: { params: { id: string } }) => {
               <div
                 style={{
                   width: "100%",
-                  height: 200,
                   borderRadius: "0.5rem",
-                  background: vars.color.gray_05,
+                  background: vars.color.gray_06,
                 }}
               >
-                그래프
+                <Chart />
               </div>
               <div
                 style={{ display: "flex", flexDirection: "column", gap: 20 }}

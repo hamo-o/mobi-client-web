@@ -8,3 +8,4 @@ export * from "./Card";
 export * from "./CardDetail";
 export * from "./NavigationTop";
 export * from "./NavigationLeft";
+export * from "./Chart";
