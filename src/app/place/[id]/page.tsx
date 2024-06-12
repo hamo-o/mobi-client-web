@@ -8,12 +8,20 @@ import {
 } from "../place.css";
 import { Bubble, Button, CardDetail, Figure, Tag } from "@/components";
 import Link from "next/link";
+import Image from "next/image";
 
 const Place = ({ params }: { params: { id: string } }) => {
   return (
     <main className={container}>
       <div>
-        <div className={imageContainer}></div>
+        <div className={imageContainer}>
+          <Image
+            src="/images/places/홍대.png"
+            alt="홍대"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
         <div
           style={{
             width: "100%",
