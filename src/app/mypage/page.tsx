@@ -41,13 +41,18 @@ const Mypage = () => {
             title: "압구정 로데오",
           },
         ].map((place, key) => (
-          <Card
+          <Link
             key={key}
-            image=""
-            title={place.title}
-            discriptions={[<Tag key={0} text="방문예정" />]}
-            rightChild={<Button state="active" text="리뷰 작성" />}
-          />
+            href={`/review/${place.id}`}
+            style={{ width: "100%" }}
+          >
+            <Card
+              image=""
+              title={place.title}
+              discriptions={[<Tag key={0} text="방문예정" />]}
+              rightChild={<Button state="active" text="리뷰 작성" />}
+            />
+          </Link>
         ))}
       </div>
     </main>

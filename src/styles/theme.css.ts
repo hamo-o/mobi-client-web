@@ -15,6 +15,7 @@ export const [themeClass, vars] = createTheme({
     yellow: "#e8ba42",
     yellow_20: "#e8ba4233",
     black: "#212121",
+    black_20: "#000000BF",
     gray_04: "#656565",
     gray_05: "#404040",
     gray_02: "#d4d4d4",

@@ -70,6 +70,9 @@ devDependencies:
   '@vanilla-extract/webpack-plugin':
     specifier: ^2.3.8
     version: 2.3.8(@types/node@20.12.10)(webpack@5.91.0)
+  chromatic:
+    specifier: ^11.3.2
+    version: 11.3.2
   eslint:
     specifier: ^8
     version: 8.57.0
@@ -1452,7 +1455,7 @@ packages:
     resolution: {integrity: sha512-ZfQDc5Zg5YSC9cWdBc9QpMF0vgvknwKTB9xBE0NhCJWjGxG9mz9yLzQTzzliYulPtWgcQ+8cE+apDljYK+fWdQ==}
     engines: {node: '>=16.0.0', yarn: '>=1.22.18'}
     dependencies:
-      chromatic: 11.3.1
+      chromatic: 11.3.2
       filesize: 10.1.1
       jsonfile: 6.1.0
       react-confetti: 6.1.0(react@18.3.1)
@@ -4875,8 +4878,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic@11.3.1:
-    resolution: {integrity: sha512-ATAfVEn84NARTIxdiGQ8QywWg3BPM/+6stVD1stSKCO7lQLEKFyGcI+PhBBDt+ZgNcgsEsg5fo3E2dQNt01W6g==}
+  /chromatic@11.3.2:
+    resolution: {integrity: sha512-0PuHl49VvBMoDHEfmNjC/bim9YYNhWF3axTZlFuatC0avwr2Xw4GDqJDG9fArEWN8oM8VtYHkE9D7qc87dmz2w==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
