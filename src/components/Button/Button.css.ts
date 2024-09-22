@@ -7,6 +7,7 @@ export const buttonRecipe = recipe({
     borderRadius: "0.5rem",
 
     flexShrink: 0,
+    whiteSpace: "nowrap",
   },
   variants: {
     state: {

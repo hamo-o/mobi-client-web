@@ -3,7 +3,7 @@ import { vars } from "@/styles/theme.css";
 
 export const container = style({
   width: "100%",
-  minWidth: 597,
+  minWidth: "fit-content",
   height: 146,
   padding: "1.75rem 1.5em",
 
