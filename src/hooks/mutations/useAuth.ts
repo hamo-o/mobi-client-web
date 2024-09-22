@@ -2,8 +2,8 @@ import authApi from "@/apis/auth/authApi";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 
-import apiClient from "@/apis";
 import { LoginResponse } from "@/types/dto";
+import { setCookie } from "@/app/actions";
 
 export const useAuth = () => {
   const router = useRouter();
@@ -14,19 +14,11 @@ export const useAuth = () => {
       const token = data.tokenVo;
       if (!token) return;
       const { accessToken, accessTokenAge } = token;
-      setAccessToken(accessToken, accessTokenAge);
-      apiClient.interceptors.request.use(
-        (config) => {
-          try {
-            config.headers.Authorization = `Bearer ${accessToken}`;
-            return config;
-          } catch (err) {}
-          return config;
-        },
-        (error) => {
-          return Promise.reject(error);
-        }
-      );
+      setCookie("access_token", accessToken, {
+        httpOnly: true,
+        secure: true,
+        maxAge: accessTokenAge,
+      });
       router.push("/");
     },
     onError: (error: any) => {
