@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { themeClass } from "@/styles/theme.css";
 import { NavigationTop } from "@/components";
 
-import QueryClientProvider from "./_provider/QueryClientProvider";
+import { QueryClientProvider, CookieProvider } from "./_provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,9 +27,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${themeClass} ${pretendard}`}>
         <QueryClientProvider>
-          <NavigationTop />
-          {children}
-          {modal}
+          <CookieProvider>
+            <NavigationTop />
+            {children}
+            {modal}
+          </CookieProvider>
         </QueryClientProvider>
       </body>
     </html>
