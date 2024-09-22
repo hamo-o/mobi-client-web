@@ -12,3 +12,10 @@ export interface LoginResponse {
     refreshTokenAge: number;
   };
 }
+
+export interface BaseResponse<T> {
+  status: number;
+  success: boolean;
+  message: string;
+  data: T;
+}

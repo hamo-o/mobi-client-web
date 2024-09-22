@@ -14,7 +14,7 @@ export type ModalProps = {
   title: string | React.ReactNode;
   text?: string;
   children: React.ReactNode;
-  button: React.ReactNode;
+  button?: React.ReactNode;
 };
 
 export const Modal = (props: ModalProps) => {

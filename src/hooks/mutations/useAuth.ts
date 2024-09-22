@@ -2,7 +2,7 @@ import authApi from "@/apis/auth/authApi";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 
-import { LoginResponse } from "@/types/dto";
+import { BaseResponse, LoginResponse } from "@/types/dto";
 import { setCookie } from "@/app/actions";
 
 export const useAuth = () => {
@@ -10,9 +10,12 @@ export const useAuth = () => {
 
   const kakaoMutation = useMutation({
     mutationFn: authApi.LOGIN,
-    onSuccess: (data: LoginResponse) => {
+    onSuccess: (response: BaseResponse<LoginResponse>) => {
+      if (!response.success) return;
+      const data = response.data;
       const token = data.tokenVo;
       if (!token) return;
+
       const { accessToken, accessTokenAge } = token;
       setCookie("access_token", accessToken, {
         httpOnly: true,
