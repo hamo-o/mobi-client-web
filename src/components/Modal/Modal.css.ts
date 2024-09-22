@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "@/styles/theme.css";
 
 export const background = style({
-  position: "fixed",
+  position: "absolute",
   top: 0,
   left: 0,
   width: "100vw",
