@@ -1,5 +1,21 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useAuth } from "@/hooks/mutations/useAuth";
+
 const Login = () => {
-  return <div>로그인 페이지입니다.</div>;
+  const searchParams = useSearchParams();
+  const code = searchParams.get("code");
+  const { kakaoMutation } = useAuth();
+
+  useEffect(() => {
+    if (code) {
+      kakaoMutation.mutate(code);
+    }
+  }, [code]);
+
+  return <></>;
 };
 
 export default Login;
