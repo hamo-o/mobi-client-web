@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { themeClass } from "@/styles/theme.css";
 import { NavigationTop } from "@/components";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 export const metadata: Metadata = {
   title: "MOBI",
@@ -24,11 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${themeClass} ${pretendard}`}>
-        {/* <QueryClientProvider> */}
         <NavigationTop />
         {children}
         {modal}
-        {/* </QueryClientProvider> */}
       </body>
     </html>
   );
