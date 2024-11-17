@@ -4,7 +4,6 @@ import { vars } from "@/styles/theme.css";
 export const container = style({
   width: "100%",
   minWidth: "fit-content",
-  height: 146,
   padding: "1.75rem 1.5em",
 
   borderRadius: "1rem",
@@ -16,8 +15,8 @@ export const container = style({
 });
 
 export const imageContainer = style({
-  width: 90,
-  height: 90,
+  width: 60,
+  height: 60,
 
   borderRadius: "0.5rem",
   background: vars.color.gray_05,

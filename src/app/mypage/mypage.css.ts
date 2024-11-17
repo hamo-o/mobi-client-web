@@ -19,7 +19,7 @@ export const cardContainer = style({
   flexDirection: "column",
 
   alignItems: "center",
-  gap: 20,
+  gap: "1.5rem",
 
   overflowY: "scroll",
   scrollbarWidth: "none",

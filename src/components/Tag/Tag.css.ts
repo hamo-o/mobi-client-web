@@ -3,7 +3,6 @@ import { vars } from "@/styles/theme.css";
 
 export const tagRecipe = recipe({
   base: {
-    height: "2rem",
     borderRadius: "0.25rem",
 
     background: vars.color.gray_05,
@@ -13,7 +12,7 @@ export const tagRecipe = recipe({
   },
   variants: {
     size: {
-      small: { padding: "0.5rem 0.75rem" },
+      small: { padding: "0.4rem 0.5rem" },
       medium: { padding: "1rem 1.75rem" },
     },
   },

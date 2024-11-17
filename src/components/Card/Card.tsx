@@ -24,7 +24,7 @@ export const Card = (props: CardProps) => {
     <div className={container}>
       <div className={imageContainer}></div>
       <div className={textContainer}>
-        <span className={`${typos.subtitle} ${titleContainer}`}>{title}</span>
+        <span className={`${typos.subtitle2} ${titleContainer}`}>{title}</span>
         <div className={discriptionContainer}>
           {discriptions.map((discription, key) => (
             <div className={typos.detail} key={key}>
