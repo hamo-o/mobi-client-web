@@ -1,7 +1,7 @@
 "use client";
 
 import { Modal } from "@/components/Modal";
-import { Button, Input } from "@/components";
+import { Button } from "@/components";
 import { Logo } from "@/icons";
 import Link from "next/link";
 

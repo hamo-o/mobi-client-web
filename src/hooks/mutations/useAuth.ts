@@ -12,16 +12,13 @@ export const useAuth = () => {
     mutationFn: authApi.LOGIN,
     onSuccess: (response: BaseResponse<LoginResponse>) => {
       if (!response.success) return;
+
       const data = response.data;
       const token = data.tokenVo;
       if (!token) return;
 
-      const { accessToken, accessTokenAge } = token;
-      setCookie("access_token", accessToken, {
-        httpOnly: true,
-        secure: true,
-        maxAge: accessTokenAge,
-      });
+      setAccessToken(token);
+
       router.push("/");
     },
     onError: (error: any) => {
@@ -34,6 +31,17 @@ export const useAuth = () => {
   };
 };
 
-const setAccessToken = (accessToken: string, expireTime: number) => {
-  console.log(accessToken, expireTime);
+const setAccessToken = ({
+  accessToken,
+  accessTokenAge,
+}: {
+  accessToken: string;
+  accessTokenAge: number;
+}) => {
+  console.log(accessToken, accessTokenAge);
+  // setCookie("access_token", accessToken, {
+  //   httpOnly: true,
+  //   secure: true,
+  //   maxAge: accessTokenAge,
+  // });
 };
