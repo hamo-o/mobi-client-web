@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { themeClass } from "@/styles/theme.css";
 import { NavigationTop } from "@/components";
-
-import { QueryClientProvider, CookieProvider } from "./_provider";
+import ReactQueryProvider from "./_provider/ReactQueryProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,13 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${themeClass} ${pretendard}`}>
-        <QueryClientProvider>
-          <CookieProvider>
-            <NavigationTop />
-            {children}
-            {modal}
-          </CookieProvider>
-        </QueryClientProvider>
+        <ReactQueryProvider>
+          <NavigationTop />
+          {children}
+          {modal}
+        </ReactQueryProvider>
       </body>
     </html>
   );

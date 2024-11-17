@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card, Figure, NavigationTop } from "@/components";
+import { Card, Figure } from "@/components";
 import { container, cardContainer } from "./home.css";
 
 const Home = () => {
