@@ -16,14 +16,19 @@ const pretendard = localFont({
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${themeClass} ${pretendard}`}>
+        {/* <QueryClientProvider> */}
         <NavigationTop />
         {children}
+        {modal}
+        {/* </QueryClientProvider> */}
       </body>
     </html>
   );
