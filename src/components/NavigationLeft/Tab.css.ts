@@ -4,7 +4,8 @@ import { vars } from "@/styles/theme.css";
 export const tabRecipe = recipe({
   base: {
     width: "100%",
-    padding: "1.75rem",
+
+    padding: "1.5rem",
 
     background: vars.color.gray_06,
 
