@@ -22,7 +22,7 @@ export const CardDetail = (props: CardDetailProps) => {
       <div className={topContainer}>
         <div className={textContainer}>
           <span className={`${typos.subtitle} ${titleContainer}`}>{title}</span>
-          {text && <span className={typos.detail}>{text}</span>}
+          {text && <span className={typos.body}>{text}</span>}
         </div>
         {rightChild}
       </div>

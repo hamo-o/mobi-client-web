@@ -3,8 +3,7 @@ import { vars } from "@/styles/theme.css";
 
 export const figureRecipe = recipe({
   base: {
-    height: 50,
-    padding: "1rem 1.25rem",
+    padding: "0.9rem 1.25rem",
     borderRadius: "0.75rem",
 
     flexShrink: 0,
