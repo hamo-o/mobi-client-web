@@ -14,7 +14,7 @@ export const Tab = (props: TabProps) => {
       className={tabRecipe({ state: props.selected ? "active" : "default" })}
       onClick={props.onClick}
     >
-      <span className={typos.label1}>{props.text}</span>
+      <span className={typos.label2}>{props.text}</span>
       <RightArrow />
     </div>
   );

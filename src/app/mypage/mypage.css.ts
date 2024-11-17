@@ -8,7 +8,7 @@ export const container = style({
   padding: "10rem 18rem",
 
   display: "flex",
-  gap: "8rem",
+  gap: "6rem",
 });
 
 export const cardContainer = style({

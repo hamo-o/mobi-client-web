@@ -21,6 +21,9 @@ export const imageContainer = style({
   borderRadius: "0.5rem",
   background: vars.color.gray_05,
 
+  position: "relative",
+  overflow: "hidden",
+
   flexShrink: 0,
 });
 
