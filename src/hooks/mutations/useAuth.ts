@@ -3,10 +3,12 @@ import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 
 import { BaseResponse, LoginResponse } from "@/types/dto";
-import { setCookie } from "@/app/actions";
+
+import { useCookies } from "react-cookie";
 
 export const useAuth = () => {
   const router = useRouter();
+  const [cookies, setCookie] = useCookies(["access_token"]);
 
   const kakaoMutation = useMutation({
     mutationFn: authApi.LOGIN,
@@ -17,7 +19,11 @@ export const useAuth = () => {
       const token = data.tokenVo;
       if (!token) return;
 
-      setAccessToken(token);
+      setCookie("access_token", token.accessToken, {
+        httpOnly: true,
+        secure: true,
+        maxAge: token.accessTokenAge,
+      });
 
       router.push("/");
     },
@@ -29,19 +35,4 @@ export const useAuth = () => {
   return {
     kakaoMutation,
   };
-};
-
-const setAccessToken = ({
-  accessToken,
-  accessTokenAge,
-}: {
-  accessToken: string;
-  accessTokenAge: number;
-}) => {
-  console.log(accessToken, accessTokenAge);
-  // setCookie("access_token", accessToken, {
-  //   httpOnly: true,
-  //   secure: true,
-  //   maxAge: accessTokenAge,
-  // });
 };

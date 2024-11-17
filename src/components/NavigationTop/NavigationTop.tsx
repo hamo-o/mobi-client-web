@@ -12,7 +12,7 @@ export type NavigationToptProps = {};
 
 export const NavigationTop = (props: NavigationToptProps) => {
   const cookieStore = cookies();
-  const accessToken = cookieStore.get("accessToken");
+  const accessToken = cookieStore.get("access_token");
 
   return (
     <div className={container}>
