@@ -1,7 +1,6 @@
 import { Button, Tag } from "@/components";
 import Link from "next/link";
-import Image from "next/image";
-
+import { ServerImage } from "@/components/Image/ServerImage";
 import { vars } from "@/styles/theme.css";
 import { typos } from "@/styles/typos.css";
 
@@ -15,9 +14,9 @@ export const PlaceHeader = (place: PlaceDetail) => {
   return (
     <div>
       <div className={imageContainer}>
-        <Image
+        <ServerImage
           src={imageUrl}
-          // fallback="/images/fallback.png"
+          fallback="/images/fallback.png"
           alt={placeName}
           fill
           style={{ objectFit: "cover" }}

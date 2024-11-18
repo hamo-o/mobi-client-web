@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ImageProps } from "next/image";
-import fs from "fs";
+import { promises as fs } from "fs";
 import path from "path";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
@@ -36,7 +36,7 @@ async function getImageSrc(src: string | StaticImport, fallback: string) {
 
 async function checkLocalImageExist(src: string) {
   try {
-    await fs.promises.access(src, fs.constants.F_OK);
+    await fs.access(src, fs.constants.F_OK);
     return true;
   } catch {
     return false;
