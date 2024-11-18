@@ -1,23 +1,23 @@
 import { Button, Tag } from "@/components";
 import Link from "next/link";
-import { ServerImage } from "@/components/Image/ServerImage";
+import Image from "next/image";
 
 import { vars } from "@/styles/theme.css";
 import { typos } from "@/styles/typos.css";
 
 import { imageContainer } from "./index.css";
 import { PlaceDetail } from "@/types/dto";
+import BookmarkButton from "./BookmarkButton";
 
-export const PlaceHeader = ({
-  placeName,
-  imageUrl,
-}: Pick<PlaceDetail, "placeName" | "imageUrl">) => {
+export const PlaceHeader = (place: PlaceDetail) => {
+  const { placeId, placeName, imageUrl, isBookmarked } = place;
+
   return (
     <div>
       <div className={imageContainer}>
-        <ServerImage
+        <Image
           src={imageUrl}
-          fallback="/images/fallback.png"
+          // fallback="/images/fallback.png"
           alt={placeName}
           fill
           style={{ objectFit: "cover" }}
@@ -44,7 +44,7 @@ export const PlaceHeader = ({
           <Link href="/place/create">
             <Button state="active" text="방문하기" />
           </Link>
-          <Button state="default" text="저장하기" />
+          <BookmarkButton placeId={placeId} isBookmarked={isBookmarked} />
         </div>
       </div>
     </div>

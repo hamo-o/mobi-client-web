@@ -11,7 +11,7 @@ import { typos } from "@/styles/typos.css";
 import { ButtonProps } from "../Button";
 import { FigureProps } from "../Figure";
 
-import { ServerImage } from "../Image/ServerImage";
+import Image from "next/image";
 
 export type CardProps = {
   image: string;
@@ -25,10 +25,10 @@ export const Card = (props: CardProps) => {
   return (
     <div className={container}>
       <div className={imageContainer}>
-        <ServerImage
+        <Image
           src={image}
           alt={title}
-          fallback="/images/fallback.png"
+          // fallback="/images/fallback.png"
           fill
           style={{ objectFit: "cover" }}
         />
