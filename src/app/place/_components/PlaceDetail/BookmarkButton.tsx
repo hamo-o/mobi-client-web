@@ -9,17 +9,19 @@ const BookmarkButton = ({
   isBookmarked,
 }: Pick<PlaceDetail, "placeId" | "isBookmarked">) => {
   const { mutation } = useBookmark(placeId, {
-    bookMarkStatus: true,
+    bookMarkStatus: !isBookmarked,
   });
 
   const handleClickBookmark = () => {
     mutation.mutate();
   };
 
-  return isBookmarked ? (
-    <Button state="default" text="찜 해제" />
-  ) : (
-    <Button state="default" text="찜하기" onClick={handleClickBookmark} />
+  return (
+    <Button
+      state="default"
+      text={isBookmarked ? "찜 해제" : "찜하기"}
+      onClick={handleClickBookmark}
+    />
   );
 };
 export default BookmarkButton;
