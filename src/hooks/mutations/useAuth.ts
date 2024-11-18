@@ -20,7 +20,6 @@ export const useAuth = () => {
       if (!token) return;
 
       setCookie("access_token", token.accessToken, {
-        httpOnly: true,
         secure: true,
         maxAge: token.accessTokenAge,
       });
