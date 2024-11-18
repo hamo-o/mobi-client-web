@@ -1,16 +1,15 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { getCookie } from "./app/actions";
+import { cookies } from "next/headers";
 
 export async function middleware(request: NextRequest) {
-  const token = getCookie("access_token");
+  const cookieStore = cookies();
+  const accessToken = cookieStore.get("access_token")?.value;
+
   const url = request.nextUrl.clone();
   url.pathname = "/login";
 
-  if (!token) NextResponse.redirect(url);
-
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("Authorization", `Bearer ${token}`);
+  if (!accessToken) NextResponse.redirect(url);
 
   return NextResponse.next();
 }
