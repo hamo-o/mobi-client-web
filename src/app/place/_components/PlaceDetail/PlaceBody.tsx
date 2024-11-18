@@ -1,10 +1,9 @@
-import { typos } from "@/styles/typos.css";
-import { Bubble, CardDetail, Figure, Chart, Map } from "@/components";
-
+import { CardDetail, Figure, Chart, Map } from "@/components";
 import { vars } from "@/styles/theme.css";
 
 import { cardContainer, twoColumnContainer } from "./index.css";
 import { PlaceDetail } from "@/types/dto";
+import Reviews from "./Reivews";
 
 export const PlaceBody = (place: PlaceDetail) => {
   const {
@@ -46,11 +45,7 @@ export const PlaceBody = (place: PlaceDetail) => {
             >
               <Chart timeLine={timeLine} />
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              <Bubble time="22:00" text="여기 사람 개많음" />
-              <Bubble time="22:30" text="클럽거리 밤 10시 이후에 가지 마세요" />
-              <Bubble time="22:00" text="너무 더러워요" />
-            </div>
+            <Reviews />
           </div>
         }
       />
