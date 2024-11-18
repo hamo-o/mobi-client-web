@@ -28,17 +28,13 @@ export interface Place {
   imageUrl: string;
   statusKeyword: Degree;
   populationDensity: number;
-  trafficStatus: string;
+  trafficStatus: Degree;
   latitude: string;
   longitude: string;
 }
 
 export interface PlaceDetail extends Place {
-  placeId: number;
-  latitude: string;
-  longitude: string;
-  populationDensity: number;
   trafficCommunication: string;
   populationDensityMsg: string;
-  trafficCommunicationMsg: string;
+  trafficCommunicationMsg: Degree;
 }

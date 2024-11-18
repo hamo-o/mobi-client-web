@@ -6,7 +6,13 @@ import {
   NavermapsProvider,
 } from "react-naver-maps";
 
-export const Map = () => {
+export const Map = ({
+  latitude,
+  longitude,
+}: {
+  latitude: string;
+  longitude: string;
+}) => {
   return (
     <NavermapsProvider
       ncpClientId={process.env.NEXT_PUBLIC_NAVERMAPS_CLIENT_ID || ""}
@@ -18,7 +24,7 @@ export const Map = () => {
       >
         <NaverMap>
           <Marker
-            defaultPosition={{ lat: 37.554371328, lng: 126.9227542239 }}
+            defaultPosition={{ lat: Number(latitude), lng: Number(longitude) }}
           />
         </NaverMap>
       </MapDiv>

@@ -7,6 +7,7 @@ import {
 } from "./CardDetail.css";
 import { typos } from "@/styles/typos.css";
 import { FigureProps } from "../Figure";
+import { colors } from "@/styles/colors";
 
 export type CardDetailProps = {
   title: string;
