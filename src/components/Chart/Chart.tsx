@@ -12,6 +12,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { container } from "./Chart.css";
+import { Timeline } from "@/types/dto";
 
 ChartJS.register(
   CategoryScale,
@@ -40,54 +41,34 @@ export const options = {
   barPercentage: 0.6,
 };
 
-const labels = [
-  0, 1, 2, 3, 4, 5, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-  22, 23,
-];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      data: [
-        100, 80, 70, 50, 40, 80, 70, 60, 50, 40, 10, 20, 30, 70, 80, 90, 80, 65,
-        75, 100, 85, 95, 100, 95,
-      ],
-      backgroundColor: [
-        colors.gray_03,
-        colors.gray_04,
-        colors.gray_04,
-        colors.gray_05,
-        colors.gray_05,
-        colors.gray_03,
-        colors.gray_04,
-        colors.gray_04,
-        colors.gray_05,
-        colors.green,
-        colors.gray_05,
-        colors.gray_05,
-        colors.gray_05,
-        colors.gray_04,
-        colors.gray_03,
-        colors.gray_03,
-        colors.gray_04,
-        colors.gray_04,
-        colors.gray_03,
-        colors.gray_03,
-        colors.gray_03,
-        colors.gray_03,
-        colors.gray_03,
-      ],
-      borderRadius: Number.MAX_VALUE,
-      borderSkipped: false,
-    },
-  ],
+export const formatData = (timeLine: Timeline) => {
+  return {
+    labels: Object.keys(timeLine),
+    datasets: [
+      {
+        data: Object.values(timeLine).map((time) => +time),
+        backgroundColor: Object.values(timeLine).map((time) =>
+          formatNumberToColor(+time)
+        ),
+        borderRadius: Number.MAX_VALUE,
+        borderSkipped: false,
+      },
+    ],
+  };
 };
 
-export const Chart = () => {
+const formatNumberToColor = (number: number) => {
+  if (number > 50000) return colors.white;
+  if (number > 30000) return colors.gray_01;
+  if (number > 10000) return colors.gray_03;
+  if (number > 5000) return colors.gray_04;
+  return colors.gray_05;
+};
+
+export const Chart = ({ timeLine }: { timeLine: Timeline }) => {
   return (
     <div className={container}>
-      <Bar options={options} data={data} />
+      <Bar options={options} data={formatData(timeLine)} />
     </div>
   );
 };

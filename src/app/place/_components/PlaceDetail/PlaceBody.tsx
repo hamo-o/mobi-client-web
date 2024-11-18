@@ -1,15 +1,5 @@
 import { typos } from "@/styles/typos.css";
-import {
-  Bubble,
-  Button,
-  CardDetail,
-  Figure,
-  Tag,
-  Chart,
-  Map,
-} from "@/components";
-import Link from "next/link";
-import { ServerImage } from "@/components/Image/ServerImage";
+import { Bubble, CardDetail, Figure, Chart, Map } from "@/components";
 
 import { vars } from "@/styles/theme.css";
 
@@ -21,6 +11,8 @@ export const PlaceBody = (place: PlaceDetail) => {
     statusKeyword,
     trafficCommunicationMsg,
     populationDensityMsg,
+    timeLine,
+    location,
     latitude,
     longitude,
   } = place;
@@ -52,7 +44,7 @@ export const PlaceBody = (place: PlaceDetail) => {
                 background: vars.color.gray_06,
               }}
             >
-              <Chart />
+              <Chart timeLine={timeLine} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <Bubble time="22:00" text="여기 사람 개많음" />
@@ -64,7 +56,7 @@ export const PlaceBody = (place: PlaceDetail) => {
       />
       <CardDetail
         title="위치 정보"
-        text="서울 마포구 와우산로"
+        text={location}
         content={
           <div
             style={{
