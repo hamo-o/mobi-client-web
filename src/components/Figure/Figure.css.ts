@@ -10,26 +10,26 @@ export const figureRecipe = recipe({
   },
   variants: {
     state: {
-      first: {
+      여유: {
         background: vars.color.green_20,
         color: vars.color.green,
       },
-      second: {
+      보통: {
         background: vars.color.yellow_20,
         color: vars.color.yellow,
       },
-      third: {
+      "약간 붐빔": {
         background: vars.color.orange_20,
         color: vars.color.orange,
       },
-      forth: {
+      붐빔: {
         background: vars.color.red_20,
         color: vars.color.red,
       },
     },
   },
   defaultVariants: {
-    state: "first",
+    state: "여유",
   },
 });
 

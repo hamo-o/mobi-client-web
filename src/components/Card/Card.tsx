@@ -11,7 +11,7 @@ import { typos } from "@/styles/typos.css";
 import { ButtonProps } from "../Button";
 import { FigureProps } from "../Figure";
 
-import Image from "next/image";
+import { ServerImage } from "../Image/ServerImage";
 
 export type CardProps = {
   image: string;
@@ -25,13 +25,19 @@ export const Card = (props: CardProps) => {
   return (
     <div className={container}>
       <div className={imageContainer}>
-        <Image src={image} alt={title} fill style={{ objectFit: "cover" }} />
+        <ServerImage
+          src={image}
+          alt={title}
+          fallback="/images/fallback.png"
+          fill
+          style={{ objectFit: "cover" }}
+        />
       </div>
       <div className={textContainer}>
         <span className={`${typos.subtitle2} ${titleContainer}`}>{title}</span>
         <div className={discriptionContainer}>
           {discriptions.map((discription, key) => (
-            <div className={typos.detail} key={key}>
+            <div className={typos.label3} key={key}>
               {discription}
             </div>
           ))}

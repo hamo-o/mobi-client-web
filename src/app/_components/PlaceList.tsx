@@ -5,7 +5,6 @@ import { cardContainer } from "../home.css";
 import { Place } from "@/types/dto";
 
 const PlaceList = ({ places }: { places: Place[] }) => {
-  console.log(places);
   return (
     <div className={cardContainer}>
       {places.map((place, key) => (
@@ -14,7 +13,7 @@ const PlaceList = ({ places }: { places: Place[] }) => {
             image={place.imageUrl}
             title={place.placeName}
             discriptions={[`도로소통 ${place.trafficStatus}`]}
-            rightChild={<Figure state="third" text={place.statusKeyword} />}
+            rightChild={<Figure text={place.statusKeyword} />}
           />
         </Link>
       ))}
