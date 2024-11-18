@@ -16,7 +16,7 @@ export type CardProps = {
   image: string;
   title: string;
   discriptions: (ReactNode | string)[];
-  rightChild: ReactElement<ButtonProps> | ReactElement<FigureProps>;
+  rightChild?: ReactElement<ButtonProps> | ReactElement<FigureProps>;
 };
 
 export const Card = (props: CardProps) => {

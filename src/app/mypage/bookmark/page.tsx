@@ -1,7 +1,7 @@
 import { Hydrate, getDehydratedQuery } from "@/apis/utils/getDehydratedQuery";
 import visitQueryOptions from "@/apis/visit/query";
 
-import VisitList from "../_components/VisitList";
+import BookmarkList from "../_components/BookmartList";
 
 const BookmarkPage = async () => {
   const { queryKey, queryFn } = visitQueryOptions.all();
@@ -11,7 +11,7 @@ const BookmarkPage = async () => {
 
   return (
     <Hydrate state={places}>
-      {places.state.data && <VisitList places={places.state.data.data} />}
+      {places.state.data && <BookmarkList places={places.state.data.data} />}
     </Hydrate>
   );
 };

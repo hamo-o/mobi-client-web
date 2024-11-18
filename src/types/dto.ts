@@ -76,3 +76,12 @@ export interface UserPlace {
 export interface UserVisitUpdateBookMarkRequest {
   bookMarkStatus: boolean;
 }
+
+export interface PlaceTime {
+  placeId: 0;
+  visitTime: "string";
+  visitDate: "string";
+  placeName: "string";
+  placeImageUrl: "string";
+  status: "string";
+}

@@ -7,3 +7,7 @@ export const placeKeys = {
 export const visitKeys = {
   all: ["visit"] as const,
 };
+
+export const timeKeys = {
+  all: ["time"] as const,
+};
