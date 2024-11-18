@@ -51,5 +51,5 @@ export const titleContainer = style({
 export const contentContainer = style({
   display: "flex",
   flexDirection: "column",
-  gap: 24,
+  gap: "3rem",
 });

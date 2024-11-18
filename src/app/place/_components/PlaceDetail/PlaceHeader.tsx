@@ -40,7 +40,12 @@ export const PlaceHeader = (place: PlaceDetail) => {
           <Tag text="핫플" />
         </div>
         <div style={{ display: "flex", gap: "1rem" }}>
-          <Link href="/place/create">
+          <Link
+            href={{
+              pathname: `/place/${placeId}/create`,
+              query: { name: placeName },
+            }}
+          >
             <Button state="active" text="방문하기" />
           </Link>
           <BookmarkButton placeId={placeId} isBookmarked={isBookmarked} />

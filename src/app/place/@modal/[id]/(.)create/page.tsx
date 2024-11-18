@@ -4,18 +4,21 @@ import { Modal } from "@/components/Modal";
 import { Button, Input } from "@/components";
 import { useForm } from "react-hook-form";
 import Calendar from "@/components/Calendar/Calendar";
+import { useSearchParams } from "next/navigation";
 
-const PlaceVisitModal = () => {
+const PlaceVisitModal = ({ params: { id } }: { params: { id: string } }) => {
   const { register, handleSubmit } = useForm();
+  const params = useSearchParams();
 
   return (
-    <Modal title="방문 예정" button={<Button state="active" text="완료" />}>
-      <Input label="방문 장소*" icon={false} {...register("place")} />
+    <Modal
+      title={`${params.get("name")}에 언제 방문하시나요?`}
+      button={<Button state="active" text="완료" />}
+    >
       <div style={{ display: "flex", gap: 20 }}>
         <Calendar />
         <Input label="방문 시간*" icon={false} />
       </div>
-      <Input label="방문 목적" icon={false} {...register("purpose")} />
     </Modal>
   );
 };
