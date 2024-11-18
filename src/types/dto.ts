@@ -65,3 +65,14 @@ export interface PlaceDetail extends Place {
   isVisit: true;
   isBookmarked: true;
 }
+
+export interface UserPlace {
+  placeId: number;
+  userPlaceId: number;
+  imageUrl: string;
+  placeName: string;
+}
+
+export interface UserVisitUpdateBookMarkRequest {
+  bookMarkStatus: boolean;
+}
