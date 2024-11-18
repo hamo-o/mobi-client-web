@@ -1,3 +1,5 @@
+import { Degree } from "./entity";
+
 export interface BaseResponse<T> {
   status: number;
   success: boolean;
@@ -21,9 +23,14 @@ export interface LoginResponse {
 }
 
 export interface Place {
+  placeId: number;
   placeName: string;
   imageUrl: string;
-  statusKeyword: string;
+  statusKeyword: Degree;
+  populationDensity: number;
+  trafficStatus: string;
+  latitude: string;
+  longitude: string;
 }
 
 export interface PlaceDetail extends Place {

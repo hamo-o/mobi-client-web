@@ -1,10 +1,9 @@
 import { figureRecipe, FigureVariants } from "./Figure.css";
 import { typos } from "@/styles/typos.css";
-
-type degree = "여유" | "보통" | "약간 붐빔" | "붐빔";
+import type { Degree } from "@/types/entity";
 
 export type FigureProps = FigureVariants & {
-  text: degree;
+  text: Degree;
 };
 
 export const Figure = (props: FigureProps) => {
