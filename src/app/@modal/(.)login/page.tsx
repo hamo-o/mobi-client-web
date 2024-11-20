@@ -6,7 +6,6 @@ const LoginModal = () => {
   return (
     <Modal title={<Logo />}>
       <LinkButton
-        style={{ width: "100%" }}
         size="medium"
         state="active"
         text="카카오 로그인"
