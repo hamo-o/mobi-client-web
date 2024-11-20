@@ -4,7 +4,7 @@ import { ServerImage } from "@/components/Image/ServerImage";
 import { vars } from "@/styles/theme.css";
 import { typos } from "@/styles/typos.css";
 
-import { imageContainer } from "./index.css";
+import { imageContainer } from "./PlaceDetail.css";
 import { PlaceDetail } from "@/types/dto";
 import BookmarkButton from "./BookmarkButton";
 

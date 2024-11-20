@@ -1,4 +1,4 @@
-import PlaceDetail from "../_components/PlaceDetail";
+import PlaceDetail from "./_components/PlaceDetail";
 import { container } from "../place.css";
 import placeQueryOptions from "@/apis/place/query";
 import { Hydrate, getDehydratedQuery } from "@/apis/utils/getDehydratedQuery";

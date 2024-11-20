@@ -1,7 +1,7 @@
 import { CardDetail, Figure, Chart, Map } from "@/components";
 import { vars } from "@/styles/theme.css";
 
-import { cardContainer, twoColumnContainer } from "./index.css";
+import { cardContainer, twoColumnContainer } from "./PlaceDetail.css";
 import { PlaceDetail } from "@/types/dto";
 import Reviews from "./Reivews";
 
@@ -45,7 +45,7 @@ export const PlaceBody = (place: PlaceDetail) => {
             >
               <Chart timeLine={timeLine} />
             </div>
-            <Reviews />
+            <Reviews placeId={place.placeId} time={""} />
           </div>
         }
       />
