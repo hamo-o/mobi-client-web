@@ -8,6 +8,7 @@ import {
 } from "./Input.css";
 import { Search } from "@/icons";
 import type { InputHTMLAttributes } from "react";
+import { forwardRef } from "react";
 
 export type InputProps = InputVariants &
   InputHTMLAttributes<HTMLInputElement> & {
@@ -17,7 +18,7 @@ export type InputProps = InputVariants &
     value?: string;
   };
 
-export const Input = (props: InputProps) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const { label, placeholder, icon, className, ...rest } = props;
   return (
     <div className={container}>
@@ -31,9 +32,12 @@ export const Input = (props: InputProps) => {
         <input
           className={`${input} ${className}`}
           placeholder={placeholder}
+          ref={ref}
           {...rest}
         />
       </div>
     </div>
   );
-};
+});
+
+Input.displayName = "Input";

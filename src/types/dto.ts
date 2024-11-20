@@ -78,10 +78,15 @@ export interface UserVisitUpdateBookMarkRequest {
 }
 
 export interface PlaceTime {
-  placeId: 0;
-  visitTime: "string";
-  visitDate: "string";
-  placeName: "string";
-  placeImageUrl: "string";
-  status: "string";
+  placeId: number;
+  visitTime: string;
+  visitDate: string;
+  placeName: string;
+  placeImageUrl: string;
+  status: string;
+}
+
+export interface PlaceTimeRequestDto {
+  placeTime: string;
+  visitDate: string;
 }

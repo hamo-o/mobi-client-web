@@ -22,6 +22,7 @@ export const buttonRecipe = recipe({
       disabled: {
         background: vars.color.gray_04,
         color: vars.color.gray_03,
+        cursor: "not-allowed",
       },
     },
     size: {
