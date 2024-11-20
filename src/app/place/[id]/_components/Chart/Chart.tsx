@@ -1,6 +1,7 @@
 "use client";
 
 import { colors } from "@/styles/colors";
+import { typos } from "@/styles/typos.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,7 +16,6 @@ import type { ChartEvent } from "chart.js";
 import { container } from "./Chart.css";
 import { Timeline } from "@/types/dto";
 import { useContext, useRef } from "react";
-import type { Dispatch, SetStateAction, MouseEvent } from "react";
 import ReviewContext from "../../_contexts/ReviewContext";
 
 ChartJS.register(
@@ -29,12 +29,13 @@ ChartJS.register(
 
 export const Chart = ({ timeLine }: { timeLine: Timeline }) => {
   const chartRef = useRef<any>(null);
+
   const { time: selectedTime, setTime: setSelectedTime } =
     useContext(ReviewContext);
 
   const formatData = (timeLine: Timeline) => {
     return {
-      labels: Object.keys(timeLine),
+      labels: Object.keys(timeLine).map((time) => `${time}시`),
       datasets: [
         {
           data: Object.values(timeLine).map((time) => +time),
@@ -46,6 +47,10 @@ export const Chart = ({ timeLine }: { timeLine: Timeline }) => {
         },
       ],
     };
+  };
+
+  const formatStringTimeToNumber = (time: string) => {
+    return +time.split("시")[0];
   };
 
   const formatNumberToColor = (time: number, num: number) => {
@@ -88,13 +93,18 @@ export const Chart = ({ timeLine }: { timeLine: Timeline }) => {
       if (points.length) {
         const firstPoint = points[0];
         const label = chart.data.labels[firstPoint.index];
-        if (setSelectedTime) setSelectedTime(+label);
+        if (setSelectedTime) setSelectedTime(formatStringTimeToNumber(label));
       }
     },
   };
   return (
     <div className={container}>
-      <Bar options={options} data={formatData(timeLine)} ref={chartRef} />
+      <Bar
+        options={options}
+        data={formatData(timeLine)}
+        ref={chartRef}
+        style={{ cursor: "pointer" }}
+      />
     </div>
   );
 };
