@@ -58,4 +58,11 @@ export const typos = {
     lineHeight: vars.fonts.label3.lineHeight,
     letterSpacing: vars.fonts.label3.letterSpacing,
   }),
+  label3_bold: style({
+    fontFamily: vars.fonts.label3.fontFamily,
+    fontWeight: 500,
+    fontSize: vars.fonts.label3.fontSize,
+    lineHeight: vars.fonts.label3.lineHeight,
+    letterSpacing: vars.fonts.label3.letterSpacing,
+  }),
 };

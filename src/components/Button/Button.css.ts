@@ -3,7 +3,6 @@ import { vars } from "@/styles/theme.css";
 
 export const buttonRecipe = recipe({
   base: {
-    height: 48,
     borderRadius: "0.5rem",
 
     flexShrink: 0,
@@ -17,7 +16,7 @@ export const buttonRecipe = recipe({
       },
       active: {
         background: vars.color.yellow,
-        color: vars.color.gray_06,
+        color: vars.color.black,
       },
       disabled: {
         background: vars.color.gray_04,
@@ -26,8 +25,8 @@ export const buttonRecipe = recipe({
       },
     },
     size: {
-      small: { padding: "1rem 1rem" },
-      medium: { padding: "1rem 1.5rem" },
+      small: { padding: "0.75rem 1rem" },
+      medium: { padding: "0.9rem 1.5rem" },
     },
   },
   defaultVariants: {

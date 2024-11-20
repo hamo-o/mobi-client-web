@@ -23,7 +23,7 @@ const VisitItem = ({
           />,
         ]}
         {...(isVisited && {
-          rightChild: <Button state="active" text="리뷰 작성" />,
+          rightChild: <Button state="active" size="small" text="리뷰 작성" />,
         })}
       />
     </Link>
