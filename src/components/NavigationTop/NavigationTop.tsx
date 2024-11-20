@@ -1,7 +1,8 @@
 "use server";
 
-import { Input, Button } from "..";
+import { Button } from "..";
 import { Logo } from "@/icons";
+import SearchBox from "./SearchBox";
 
 import { container, form } from "./NavigationTop.css";
 import Link from "next/link";
@@ -18,7 +19,7 @@ export const NavigationTop = (props: NavigationToptProps) => {
     <div className={container}>
       <Logo />
       <div className={form}>
-        <Input placeholder="검색어를 입력하세요" icon />
+        <SearchBox />
         {accessToken ? (
           <Link href="/mypage" style={{ width: "fit-content" }}>
             <Button text="마이페이지" />

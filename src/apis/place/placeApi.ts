@@ -7,9 +7,14 @@ const placeApi = {
     const response = await apiClient.get("/place");
     return response.data;
   },
-  POST_PLACE_LIST: async (name: string): Promise<BaseResponse<Place>> => {
+  POST_PLACE_LIST: async (
+    name: string
+  ): Promise<BaseResponse<Place[]> | undefined> => {
+    if (!name) return;
     const apiClient = createApiClient();
-    const response = await apiClient.post("/place", name);
+    const response = await apiClient.post("/place", null, {
+      params: { placeName: name },
+    });
     return response.data;
   },
   GET_PLACE_DETAIL: async (id: number): Promise<BaseResponse<PlaceDetail>> => {
