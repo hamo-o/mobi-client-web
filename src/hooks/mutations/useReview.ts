@@ -8,9 +8,11 @@ export const useReview = (placeId: number) => {
 
   const mutation = useMutation({
     mutationFn: (data: ReviewCreateDto) => reviewApi.POST_REVIEW(placeId, data),
-    onSuccess: (response: BaseResponse<null>) => {
+    onSuccess: (response: BaseResponse<null>, data: ReviewCreateDto) => {
       if (!response.success) return;
-      queryClient.invalidateQueries({ queryKey: reviewKeys.all });
+      queryClient.invalidateQueries({
+        queryKey: reviewKeys.all(placeId, data.time),
+      });
       return response.success;
     },
     onError: (error: any) => {
