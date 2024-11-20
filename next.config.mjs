@@ -46,6 +46,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.kyeongin.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.mobilitytv.co.kr",
+      },
     ],
   },
 };

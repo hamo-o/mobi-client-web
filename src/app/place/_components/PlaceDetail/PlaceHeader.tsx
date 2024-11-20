@@ -42,7 +42,7 @@ export const PlaceHeader = (place: PlaceDetail) => {
         <div style={{ display: "flex", gap: "1rem" }}>
           <Link
             href={{
-              pathname: `/place/${placeId}/create`,
+              pathname: `/place/${placeId}/visit`,
               query: { name: placeName },
             }}
           >

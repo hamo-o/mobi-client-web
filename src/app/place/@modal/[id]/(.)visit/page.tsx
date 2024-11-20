@@ -1,7 +1,7 @@
 "use client";
 
 import { Modal } from "@/components/Modal";
-import { Button, Input } from "@/components";
+import { Button } from "@/components";
 import { useForm } from "react-hook-form";
 import Calendar from "@/components/Calendar/Calendar";
 import { useSearchParams } from "next/navigation";
@@ -17,7 +17,6 @@ const PlaceVisitModal = ({ params: { id } }: { params: { id: string } }) => {
     >
       <div style={{ display: "flex", gap: 20 }}>
         <Calendar />
-        <Input label="방문 시간*" icon={false} />
       </div>
     </Modal>
   );
