@@ -15,7 +15,7 @@ import ClientImage from "../Image/ClientImage";
 export type CardProps = {
   image: string;
   title: string;
-  discriptions: (ReactNode | string)[];
+  discriptions?: (ReactNode | string)[];
   rightChild?: ReactElement<ButtonProps> | ReactElement<FigureProps>;
 };
 
@@ -35,11 +35,12 @@ export const Card = (props: CardProps) => {
       <div className={textContainer}>
         <span className={`${typos.subtitle2} ${titleContainer}`}>{title}</span>
         <div className={discriptionContainer}>
-          {discriptions.map((discription, key) => (
-            <div className={typos.label3} key={key}>
-              {discription}
-            </div>
-          ))}
+          {discriptions &&
+            discriptions.map((discription, key) => (
+              <div className={typos.label3} key={key}>
+                {discription}
+              </div>
+            ))}
         </div>
       </div>
       {rightChild}

@@ -20,11 +20,7 @@ const BookmarkList = ({ places }: { places: UserPlace[] }) => {
           href={`/place/${place.placeId}`}
           style={{ width: "100%" }}
         >
-          <Card
-            image={place.imageUrl || ""}
-            title={place.placeName}
-            discriptions={[<Tag key={0} text="방문예정" />]}
-          />
+          <Card image={place.imageUrl || ""} title={place.placeName} />
         </Link>
       ))}
     </div>
