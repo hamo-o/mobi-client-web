@@ -3,10 +3,10 @@ import { vars } from "@/styles/theme.css";
 
 export const buttonRecipe = recipe({
   base: {
-    height: 52,
     borderRadius: "0.5rem",
 
     flexShrink: 0,
+    whiteSpace: "nowrap",
   },
   variants: {
     state: {
@@ -16,16 +16,17 @@ export const buttonRecipe = recipe({
       },
       active: {
         background: vars.color.yellow,
-        color: vars.color.gray_06,
+        color: vars.color.black,
       },
       disabled: {
         background: vars.color.gray_04,
         color: vars.color.gray_03,
+        cursor: "not-allowed",
       },
     },
     size: {
-      small: { padding: "0.5rem 1rem" },
-      medium: { padding: "1rem 1.75rem" },
+      small: { padding: "0.75rem 1rem" },
+      medium: { padding: "0.9rem 1.5rem" },
     },
   },
   defaultVariants: {

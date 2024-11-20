@@ -11,10 +11,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 export const Button = ({ state, size, text, ...rest }: ButtonProps) => {
   return (
     <button
-      className={`${buttonRecipe({
-        state: state,
-        size: size,
-      })} ${typos.label2}`}
+      className={`${buttonRecipe({ state, size })} ${size === "small" ? typos.label3_bold : typos.label2}`}
       {...rest}
     >
       {text}

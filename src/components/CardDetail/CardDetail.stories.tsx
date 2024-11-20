@@ -22,7 +22,7 @@ export const Small: Story = {
   args: {
     title: "인구 밀도",
     text: "도보 이동이 자유로워요.",
-    rightChild: <Figure state="first" text="여유" />,
+    rightChild: <Figure text="여유" />,
   },
 };
 

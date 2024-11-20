@@ -1,61 +1,18 @@
-import Link from "next/link";
-import { Card, Button, Tag, NavigationLeft } from "@/components";
-import { container, cardContainer } from "./mypage.css";
+import { Hydrate, getDehydratedQuery } from "@/apis/utils/getDehydratedQuery";
 
-const Mypage = () => {
+import VisitList from "./_components/VisitList";
+import timeQueryOptions from "@/apis/time/query";
+
+const Mypage = async () => {
+  const { queryKey, queryFn } = timeQueryOptions.all();
+  const places = await getDehydratedQuery({ queryKey, queryFn });
+
+  if (!places) return null;
+
   return (
-    <main className={container}>
-      <NavigationLeft />
-      <div className={cardContainer}>
-        {[
-          {
-            id: 1,
-            title: "홍대",
-          },
-          {
-            id: 2,
-            title: "가로수길",
-          },
-          {
-            id: 1,
-            title: "홍대",
-          },
-          {
-            id: 1,
-            title: "홍대",
-          },
-          {
-            id: 3,
-            title: "압구정 로데오",
-          },
-          {
-            id: 2,
-            title: "가로수길",
-          },
-          {
-            id: 1,
-            title: "홍대",
-          },
-          {
-            id: 3,
-            title: "압구정 로데오",
-          },
-        ].map((place, key) => (
-          <Link
-            key={key}
-            href={`/review/${place.id}`}
-            style={{ width: "100%" }}
-          >
-            <Card
-              image=""
-              title={place.title}
-              discriptions={[<Tag key={0} text="방문예정" />]}
-              rightChild={<Button state="active" text="리뷰 작성" />}
-            />
-          </Link>
-        ))}
-      </div>
-    </main>
+    <Hydrate state={places}>
+      {places.state.data && <VisitList places={places.state.data.data} />}
+    </Hydrate>
   );
 };
 

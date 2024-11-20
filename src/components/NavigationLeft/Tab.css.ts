@@ -1,32 +1,17 @@
-import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import { style } from "@vanilla-extract/css";
 import { vars } from "@/styles/theme.css";
 
-export const tabRecipe = recipe({
-  base: {
-    width: "100%",
-    padding: "1.75rem",
+export const tabStyle = style({
+  width: "100%",
 
-    background: vars.color.gray_06,
+  padding: "1.5rem",
 
-    display: "flex",
-    justifyContent: "space-between",
-    flexShrink: 0,
+  background: vars.color.gray_06,
 
-    cursor: "pointer",
-  },
-  variants: {
-    state: {
-      default: {
-        color: vars.color.white,
-      },
-      active: {
-        color: vars.color.yellow,
-      },
-    },
-  },
-  defaultVariants: {
-    state: "default",
-  },
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  flexShrink: 0,
+
+  cursor: "pointer",
 });
-
-export type TabVariants = RecipeVariants<typeof tabRecipe>;

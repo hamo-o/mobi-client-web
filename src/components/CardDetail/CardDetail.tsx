@@ -7,6 +7,7 @@ import {
 } from "./CardDetail.css";
 import { typos } from "@/styles/typos.css";
 import { FigureProps } from "../Figure";
+import { colors } from "@/styles/colors";
 
 export type CardDetailProps = {
   title: string;
@@ -21,8 +22,14 @@ export const CardDetail = (props: CardDetailProps) => {
     <div className={container}>
       <div className={topContainer}>
         <div className={textContainer}>
-          <span className={`${typos.subtitle} ${titleContainer}`}>{title}</span>
-          {text && <span className={typos.detail}>{text}</span>}
+          <span className={`${typos.subtitle2} ${titleContainer}`}>
+            {title}
+          </span>
+          {text && (
+            <span className={typos.body} style={{ color: colors.gray_03 }}>
+              {text}
+            </span>
+          )}
         </div>
         {rightChild}
       </div>

@@ -5,13 +5,14 @@ export const container = style({
   width: "100%",
   height: 90,
 
-  padding: "0 3.25rem",
+  padding: "0 18rem",
 
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
 
   background: vars.color.black,
+  borderBottom: `1px solid ${vars.color.gray_06}`,
 
   position: "fixed",
   top: 0,
@@ -21,7 +22,7 @@ export const container = style({
 });
 
 export const form = style({
-  width: "30%",
+  minWidth: "40%",
   display: "flex",
   gap: "1.5rem",
 });

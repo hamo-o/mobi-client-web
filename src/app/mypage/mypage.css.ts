@@ -3,23 +3,21 @@ import { vars } from "@/styles/theme.css";
 
 export const container = style({
   width: "100%",
-  height: "100vh",
 
   padding: "10rem 18rem",
 
   display: "flex",
-  gap: "8rem",
+  gap: "6rem",
 });
 
 export const cardContainer = style({
   width: "100%",
-  height: "80vh",
 
-  display: "flex",
-  flexDirection: "column",
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
 
   alignItems: "center",
-  gap: 20,
+  gap: "1.5rem",
 
   overflowY: "scroll",
   scrollbarWidth: "none",

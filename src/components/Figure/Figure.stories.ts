@@ -18,7 +18,6 @@ type Story = StoryObj<typeof meta>;
 
 export const First: Story = {
   args: {
-    state: "first",
     text: "여유",
   },
 };

@@ -23,7 +23,7 @@ export const Place: Story = {
     image: "",
     title: "홍대",
     discriptions: ["61m", "도로소통 서행"],
-    rightChild: <Figure state="first" text="여유" />,
+    rightChild: <Figure text="여유" />,
   },
 };
 export const Review: Story = {

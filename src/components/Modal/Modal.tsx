@@ -14,7 +14,7 @@ export type ModalProps = {
   title: string | React.ReactNode;
   text?: string;
   children: React.ReactNode;
-  button: React.ReactNode;
+  button?: React.ReactNode;
 };
 
 export const Modal = (props: ModalProps) => {
@@ -24,7 +24,7 @@ export const Modal = (props: ModalProps) => {
     <div className={background} onClick={() => router.back()}>
       <div className={container} onClick={(e) => e.stopPropagation()}>
         <div className={topContainer}>
-          <span className={`${titleContainer} ${typos.title}`}>{title}</span>
+          <span className={`${titleContainer} ${typos.subtitle}`}>{title}</span>
           <div className={contentContainer}>{children}</div>
         </div>
         {button}
