@@ -6,12 +6,13 @@ const VisitItem = ({
   placeId,
   placeImageUrl,
   placeName,
+  visitTime,
   status,
 }: PlaceTime) => {
   const isVisited = status === "방문완료";
 
   return (
-    <Link href={`/review/${placeId}`} style={{ width: "100%" }}>
+    <Link href={`/place/${placeId}`} style={{ width: "100%" }}>
       <Card
         image={placeImageUrl || ""}
         title={placeName}
@@ -23,7 +24,16 @@ const VisitItem = ({
           />,
         ]}
         {...(isVisited && {
-          rightChild: <Button state="active" size="small" text="리뷰 작성" />,
+          rightChild: (
+            <Link
+              href={{
+                pathname: `/review/${placeId}`,
+                query: { placeName, visitTime },
+              }}
+            >
+              <Button state="active" size="small" text="리뷰 작성" />
+            </Link>
+          ),
         })}
       />
     </Link>

@@ -22,8 +22,14 @@ export const CardDetail = (props: CardDetailProps) => {
     <div className={container}>
       <div className={topContainer}>
         <div className={textContainer}>
-          <span className={`${typos.subtitle} ${titleContainer}`}>{title}</span>
-          {text && <span className={typos.body}>{text}</span>}
+          <span className={`${typos.subtitle2} ${titleContainer}`}>
+            {title}
+          </span>
+          {text && (
+            <span className={typos.body} style={{ color: colors.gray_03 }}>
+              {text}
+            </span>
+          )}
         </div>
         {rightChild}
       </div>
