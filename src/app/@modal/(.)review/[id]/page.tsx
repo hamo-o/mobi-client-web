@@ -4,15 +4,21 @@ import { useSearchParams } from "next/navigation";
 import { Modal } from "@/components/Modal";
 import { Button, Input } from "@/components";
 import { useState } from "react";
+import { useReview } from "@/hooks/mutations/useReview";
+import useModalRoute from "@/hooks/useModalRoute";
 
 const PlaceVisitModal = ({ params: { id } }: { params: { id: string } }) => {
   const params = useSearchParams();
+  const { mutation } = useReview(Number(id));
+  const [message, setMessage] = useState("");
+  const { closeModal } = useModalRoute();
+
   const placeName = params.get("placeName");
   const visitTime = params.get("visitTime");
-  const [message, setMessage] = useState("");
 
   const handleClickSubmit = () => {
-    console.log(id, visitTime, message);
+    if (visitTime) mutation.mutate({ message, time: visitTime });
+    closeModal();
   };
 
   return (

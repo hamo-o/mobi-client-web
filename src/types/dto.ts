@@ -90,3 +90,16 @@ export interface PlaceTimeRequestDto {
   placeTime: string;
   visitDate: string;
 }
+
+export interface ReviewCreateDto {
+  message: string;
+  time: string;
+}
+
+export interface Review {
+  placeId: number;
+  userVisitId: number;
+  time: string;
+  message: string;
+  userName: string;
+}

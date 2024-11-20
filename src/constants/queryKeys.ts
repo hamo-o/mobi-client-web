@@ -11,3 +11,7 @@ export const visitKeys = {
 export const timeKeys = {
   all: ["time"] as const,
 };
+
+export const reviewKeys = {
+  all: ["review"] as const,
+};
