@@ -9,6 +9,7 @@ export const Tag = (props: TagProps) => {
   return (
     <div
       className={`${tagRecipe({
+        state: props.state,
         size: props.size,
       })} ${typos.label3}`}
     >

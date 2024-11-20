@@ -83,7 +83,7 @@ export interface PlaceTime {
   visitDate: string;
   placeName: string;
   placeImageUrl: string;
-  status: string;
+  status: "방문완료" | "방문예정";
 }
 
 export interface PlaceTimeRequestDto {

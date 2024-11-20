@@ -15,6 +15,10 @@ export const tagRecipe = recipe({
       small: { padding: "0.4rem 0.5rem" },
       medium: { padding: "1rem 1.75rem" },
     },
+    state: {
+      primary: { background: vars.color.green_20, color: vars.color.green },
+      default: {},
+    },
   },
   defaultVariants: {
     size: "small",
