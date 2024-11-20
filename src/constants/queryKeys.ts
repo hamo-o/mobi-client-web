@@ -13,5 +13,5 @@ export const timeKeys = {
 };
 
 export const reviewKeys = {
-  all: ["review"] as const,
+  all: (placeId: number, time: string) => ["review", placeId, time] as const,
 };

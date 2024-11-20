@@ -1,16 +1,17 @@
-import { CardDetail, Figure, Chart, Map } from "@/components";
+import { CardDetail, Figure, Map } from "@/components";
 import { vars } from "@/styles/theme.css";
 
 import { cardContainer, twoColumnContainer } from "./PlaceDetail.css";
 import { PlaceDetail } from "@/types/dto";
-import Reviews from "./Reivews";
+import PlaceChartReviews from "./PlaceChartReviews";
 
 export const PlaceBody = (place: PlaceDetail) => {
   const {
+    placeId,
+    timeLine,
     statusKeyword,
     trafficCommunicationMsg,
     populationDensityMsg,
-    timeLine,
     location,
     latitude,
     longitude,
@@ -32,23 +33,7 @@ export const PlaceBody = (place: PlaceDetail) => {
           rightChild={<Figure text={trafficCommunicationMsg} />}
         />
       </div>
-      <CardDetail
-        title="실시간 인구 추이"
-        content={
-          <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-            <div
-              style={{
-                width: "100%",
-                borderRadius: "0.5rem",
-                background: vars.color.gray_06,
-              }}
-            >
-              <Chart timeLine={timeLine} />
-            </div>
-            <Reviews placeId={place.placeId} time={""} />
-          </div>
-        }
-      />
+      <PlaceChartReviews placeId={placeId} timeLine={timeLine} />
       <CardDetail
         title="위치 정보"
         text={location}
