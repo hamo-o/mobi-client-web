@@ -50,6 +50,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.mobilitytv.co.kr",
       },
+      {
+        protocol: "https",
+        hostname: "img1.daumcdn.net",
+      },
     ],
   },
 };
