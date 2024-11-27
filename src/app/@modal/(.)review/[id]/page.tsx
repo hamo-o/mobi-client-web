@@ -1,25 +1,32 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Modal } from "@/components/Modal";
 import { Button, Input } from "@/components";
 import { useState } from "react";
 import { useReview } from "@/hooks/mutations/useReview";
 import useModalRoute from "@/hooks/useModalRoute";
+import { useRouter } from "next/navigation";
 
 const PlaceVisitModal = ({ params: { id } }: { params: { id: string } }) => {
+  const pathname = usePathname();
   const params = useSearchParams();
   const { mutation } = useReview(Number(id));
   const [message, setMessage] = useState("");
   const { closeModal } = useModalRoute();
+  const router = useRouter();
 
   const placeName = params.get("placeName");
   const visitTime = params.get("visitTime");
 
   const handleClickSubmit = () => {
     if (visitTime) mutation.mutate({ message, time: visitTime });
-    closeModal();
+    router.push(`/place/${id}`);
   };
+
+  if (!pathname.includes("review")) {
+    return null;
+  }
 
   return (
     <Modal
