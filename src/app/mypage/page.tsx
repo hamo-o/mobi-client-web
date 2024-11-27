@@ -1,19 +1,16 @@
-import { Hydrate, getDehydratedQuery } from "@/apis/utils/getDehydratedQuery";
+"use client";
 
 import VisitList from "./_components/VisitList";
 import timeQueryOptions from "@/apis/time/query";
+import { useQuery } from "@tanstack/react-query";
 
-const Mypage = async () => {
+const Mypage = () => {
   const { queryKey, queryFn } = timeQueryOptions.all();
-  const places = await getDehydratedQuery({ queryKey, queryFn });
+  const places = useQuery({ queryKey, queryFn });
 
   if (!places) return null;
 
-  return (
-    <Hydrate state={places}>
-      {places.state.data && <VisitList places={places.state.data.data} />}
-    </Hydrate>
-  );
+  return places.data && <VisitList places={places.data.data} />;
 };
 
 export default Mypage;

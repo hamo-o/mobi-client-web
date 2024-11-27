@@ -16,7 +16,7 @@ const PlaceVisitModal = ({ params: { id } }: { params: { id: string } }) => {
   const { mutation } = usePlaceTime(+id);
   const router = useRouter();
 
-  const handleClickSubmit = async () => {
+  const handleClickSubmit = () => {
     const [visitDate, placeTime] = parseDateToString(selected).split(" ");
     mutation.mutate({ visitDate, placeTime });
     router.push("/mypage");
