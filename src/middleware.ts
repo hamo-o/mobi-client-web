@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 export async function middleware(request: NextRequest) {
   const cookieStore = cookies();
   const accessToken = cookieStore.get("access_token")?.value;
+  console.log(accessToken);
 
   if (!accessToken) {
     return NextResponse.redirect(new URL("/auth", request.nextUrl));

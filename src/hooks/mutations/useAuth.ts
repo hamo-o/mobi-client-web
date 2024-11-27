@@ -24,7 +24,9 @@ export const useAuth = () => {
         maxAge: token.accessTokenAge,
       });
 
+      // TODO: 로그인 하자마자 다시 auth로 가는 문제 해결
       router.push("/");
+      router.refresh();
     },
     onError: (error: any) => {
       console.error(error);
