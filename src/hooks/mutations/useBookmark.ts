@@ -7,6 +7,7 @@ import {
 } from "@/types/dto";
 import { useQueryClient } from "@tanstack/react-query";
 import { placeKeys, visitKeys } from "@/constants/queryKeys";
+import { revalidateTagByName } from "@/utils/revalidateTagByName";
 
 export const useBookmark = (
   placeId: number,
@@ -21,6 +22,7 @@ export const useBookmark = (
 
       queryClient.invalidateQueries({ queryKey: placeKeys.detail(placeId) });
       queryClient.invalidateQueries({ queryKey: visitKeys.all });
+      revalidateTagByName("visit");
     },
     onError: (error: any) => {
       console.error(error);

@@ -6,6 +6,7 @@ const VisitItem = ({
   placeId,
   placeImageUrl,
   placeName,
+  visitDate,
   visitTime,
   status,
 }: PlaceTime) => {
@@ -22,6 +23,7 @@ const VisitItem = ({
             {...(isVisited && { state: "primary" })}
             text={status}
           />,
+          <Tag key={1} text={`${visitDate} • ${visitTime}`} />,
         ]}
         {...(isVisited && {
           rightChild: (

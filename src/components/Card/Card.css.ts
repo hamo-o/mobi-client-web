@@ -42,7 +42,8 @@ export const titleContainer = style({
 
 export const discriptionContainer = style({
   display: "flex",
-  gap: 4,
+  alignItems: "center",
+  gap: "0.5rem",
 
   color: vars.color.gray_03,
 });

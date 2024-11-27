@@ -5,7 +5,6 @@ import { colors } from "@/styles/colors";
 import VisitItem from "./VisitItem";
 
 const VisitList = ({ places }: { places: PlaceTime[] }) => {
-  console.log(places);
   if (!places.length)
     return (
       <div className={typos.body} style={{ color: colors.gray_02 }}>

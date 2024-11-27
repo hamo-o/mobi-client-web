@@ -3,7 +3,7 @@ import type { PlaceDetail } from "@/types/dto";
 import { PlaceHeader } from "./PlaceHeader";
 import { PlaceBody } from "./PlaceBody";
 
-const PlaceDetail = ({ place }: { place: PlaceDetail }) => {
+const PlaceDetailItem = ({ place }: { place: PlaceDetail }) => {
   return (
     <>
       <PlaceHeader {...place} />
@@ -12,4 +12,4 @@ const PlaceDetail = ({ place }: { place: PlaceDetail }) => {
   );
 };
 
-export default PlaceDetail;
+export default PlaceDetailItem;

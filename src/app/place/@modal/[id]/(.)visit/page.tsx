@@ -4,23 +4,28 @@ import { Modal } from "@/components/Modal";
 import { Button } from "@/components";
 import { useState } from "react";
 import Calendar from "@/components/Calendar/Calendar";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Input } from "@/components";
 import { parseDateToString } from "@/utils/pareDate";
 import { usePlaceTime } from "@/hooks/mutations/usePlaceTime";
-import useModalRoute from "@/hooks/useModalRoute";
 
 const PlaceVisitModal = ({ params: { id } }: { params: { id: string } }) => {
   const [selected, setSelected] = useState<Date | null>(new Date());
+  const pathname = usePathname();
   const params = useSearchParams();
   const { mutation } = usePlaceTime(+id);
-  const { closeModal } = useModalRoute();
+  const router = useRouter();
 
   const handleClickSubmit = () => {
     const [visitDate, placeTime] = parseDateToString(selected).split(" ");
     mutation.mutate({ visitDate, placeTime });
-    closeModal();
+    router.push("/mypage");
+    router.refresh();
   };
+
+  if (!pathname.includes("visit")) {
+    return null;
+  }
 
   return (
     <Modal
