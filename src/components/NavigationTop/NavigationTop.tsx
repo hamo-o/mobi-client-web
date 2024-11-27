@@ -25,7 +25,7 @@ export const NavigationTop = (props: NavigationToptProps) => {
             <Button text="마이페이지" />
           </Link>
         ) : (
-          <Link href="/login" style={{ width: "fit-content" }}>
+          <Link href="/auth" style={{ width: "fit-content" }}>
             <Button text="로그인" />
           </Link>
         )}

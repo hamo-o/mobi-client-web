@@ -1,8 +1,8 @@
 import { Modal } from "@/components/Modal";
-import { Logo } from "@/icons";
 import { LinkButton } from "@/components";
+import { Logo } from "@/icons";
 
-const LoginModal = () => {
+const LoginPage = () => {
   return (
     <Modal title={<Logo />}>
       <LinkButton
@@ -15,4 +15,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
+export default LoginPage;
