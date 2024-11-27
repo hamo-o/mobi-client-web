@@ -1,15 +1,19 @@
 "use client";
 
+import placeQueryOptions from "@/apis/place/query";
 import { Button } from "@/components";
 import { useBookmark } from "@/hooks/mutations/useBookmark";
 import { PlaceDetail } from "@/types/dto";
+import { useQuery } from "@tanstack/react-query";
 
 const BookmarkButton = ({
   placeId,
-  isBookmarked,
 }: Pick<PlaceDetail, "placeId" | "isBookmarked">) => {
+  const { queryKey, queryFn } = placeQueryOptions.detail(placeId);
+  const { data: place } = useQuery({ queryKey, queryFn });
+
   const { mutation } = useBookmark(placeId, {
-    bookMarkStatus: !isBookmarked,
+    bookMarkStatus: !place?.data.isBookmarked,
   });
 
   const handleClickBookmark = () => {
@@ -19,7 +23,7 @@ const BookmarkButton = ({
   return (
     <Button
       state="default"
-      text={isBookmarked ? "찜 해제" : "찜하기"}
+      text={place?.data.isBookmarked ? "찜 해제" : "찜하기"}
       onClick={handleClickBookmark}
     />
   );
