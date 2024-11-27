@@ -62,8 +62,8 @@ export interface PlaceDetail extends Place {
   populationDensityMsg: string;
   trafficCommunicationMsg: Degree;
   timeLine: Timeline;
-  isVisit: true;
-  isBookmarked: true;
+  isVisit: boolean;
+  isBookmarked: boolean;
 }
 
 export interface UserPlace {

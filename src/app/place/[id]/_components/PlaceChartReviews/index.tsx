@@ -10,7 +10,8 @@ import ReviewContext from "../../_contexts/ReviewContext";
 const PlaceChartReviews = ({
   placeId,
   timeLine,
-}: Pick<PlaceDetail, "placeId" | "timeLine">) => {
+  isVisit,
+}: Pick<PlaceDetail, "placeId" | "timeLine" | "isVisit">) => {
   const [time, setTime] = useState<number>(new Date().getHours());
 
   return (
@@ -28,7 +29,7 @@ const PlaceChartReviews = ({
             >
               <Chart timeLine={timeLine} />
             </div>
-            <Reviews placeId={placeId} />
+            {isVisit && <Reviews placeId={placeId} />}
           </div>
         }
       />

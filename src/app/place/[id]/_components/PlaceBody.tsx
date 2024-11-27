@@ -15,6 +15,7 @@ export const PlaceBody = (place: PlaceDetail) => {
     location,
     latitude,
     longitude,
+    isVisit,
   } = place;
 
   const [densityMsg, trafficMsg] = populationDensityMsg.split(". ");
@@ -33,7 +34,11 @@ export const PlaceBody = (place: PlaceDetail) => {
           rightChild={<Figure text={trafficCommunicationMsg} />}
         />
       </div>
-      <PlaceChartReviews placeId={placeId} timeLine={timeLine} />
+      <PlaceChartReviews
+        placeId={placeId}
+        timeLine={timeLine}
+        isVisit={isVisit}
+      />
       <CardDetail
         title="위치 정보"
         text={location}
