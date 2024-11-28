@@ -21,7 +21,6 @@ const PlaceVisitModal = ({ params: { id } }: { params: { id: string } }) => {
 
   const handleClickSubmit = () => {
     if (visitTime) mutation.mutate({ message, time: visitTime });
-    router.push(`/place/${id}`);
   };
 
   if (!pathname.includes("review")) {
