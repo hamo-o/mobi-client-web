@@ -30,7 +30,7 @@ export const imageContainer = style({
 export const textContainer = style({
   width: "100%",
 
-  display: "flex",
+  display: "grid",
   flexDirection: "column",
   justifyContent: "space-between",
   gap: "0.25rem",

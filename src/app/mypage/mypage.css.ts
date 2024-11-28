@@ -4,7 +4,7 @@ import { vars } from "@/styles/theme.css";
 export const container = style({
   width: "100%",
 
-  padding: "10rem 18rem",
+  padding: "10rem 15%",
 
   display: "flex",
   gap: "6rem",
@@ -21,4 +21,10 @@ export const cardContainer = style({
 
   overflowY: "scroll",
   scrollbarWidth: "none",
+
+  "@media": {
+    "screen and (max-width: 1600px)": {
+      gridTemplateColumns: "1fr",
+    },
+  },
 });

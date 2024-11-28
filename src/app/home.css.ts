@@ -3,7 +3,7 @@ import { vars } from "@/styles/theme.css";
 
 export const container = style({
   width: "100%",
-  padding: "10rem 18rem",
+  padding: "10rem 15%",
 });
 
 export const cardContainer = style({

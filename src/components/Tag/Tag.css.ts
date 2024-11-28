@@ -3,12 +3,14 @@ import { vars } from "@/styles/theme.css";
 
 export const tagRecipe = recipe({
   base: {
+    width: "fit-content",
     borderRadius: "0.25rem",
 
     background: vars.color.gray_05,
     color: vars.color.gray_03,
 
     flexShrink: 0,
+    whiteSpace: "nowrap",
   },
   variants: {
     size: {
